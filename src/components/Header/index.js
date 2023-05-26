@@ -4,6 +4,7 @@ import logo from "../../images/logo.png";
 import { Navbar, Nav } from "react-bootstrap";
 import styles from "./styles.module.css";
 import { Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class Header extends React.Component {
         className={styles.navigationHeader}
       >
         <Nav className="mr-auto">
-          <Navbar.Brand href="/home" className={styles.navTitle}>
+          <Navbar.Brand as={Link} to="/home" className={styles.navTitle}>
             <img src={logo} alt="logo" className={styles.logo} />
             Parking
           </Navbar.Brand>
@@ -27,13 +28,13 @@ class Header extends React.Component {
           className={styles.navLinkGroup}
         >
           <Nav className="ml-auto">
-            <Nav.Link href="/home" className={styles.navLink}>
+            <Nav.Link as={Link} to="/home" className={styles.navLink}>
               <Icon name="home" size="big"/>
             </Nav.Link>
-            <Nav.Link href="/floors" className={styles.navLink}>
+            <Nav.Link as={Link} to="/floors" className={styles.navLink}>
               <Icon name="car" size="big"/>
             </Nav.Link>
-            <Nav.Link href="/profile" className={styles.navLink}>
+            <Nav.Link as={Link} to="/profile" className={styles.navLink}>
               <Icon name="user outline" size="big"/>
             </Nav.Link>
           </Nav>
